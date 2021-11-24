@@ -7,11 +7,6 @@ def main_page():
     return render_template('main/main.html')
 
 
-@app.route('/users/exit', methods=["GET"])
-def main_page():
-    return render_template('main/authorization.html')
-
-
-@app.route('/users/new', methods=["GET"])
-def main_page():
-    return render_template('main/registration.html')
+@app.route('/error_add')
+def error_add():
+    return render_template('error_add.html')

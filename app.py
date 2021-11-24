@@ -15,7 +15,7 @@ db.init_app(app)
 
 with app.app_context():
      from routes.main import *
-
+     from routes.registration import *
 
      db.create_all()
 
