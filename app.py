@@ -1,11 +1,14 @@
 from flask import Flask
 from flask_restful import Api
 from flask_sqlalchemy import SQLAlchemy
+from flask_login import LoginManager
 
 
 app = Flask(__name__)
 api = Api(app)
 app.config.from_object("config.Config")
+app.secret_key = "secret_key"
+manager = LoginManager(app)
 
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
@@ -16,6 +19,7 @@ db.init_app(app)
 with app.app_context():
      from routes.main import *
      from routes.registration import *
+     from routes.authorization import *
 
      db.create_all()
 

@@ -4,3 +4,5 @@ pymysql
 flask_restful
 sqlalchemy
 cryptography
+Werkzeug
+flask_login

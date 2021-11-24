@@ -1,7 +1,7 @@
 {% extends 'main/base.html' %}
 
 {% block title %}
-Головна сторінка
+Регістрація
 {% endblock %}
 
 {% block menu %}
@@ -67,10 +67,16 @@
               <input type="text" class="form-control" name="password" id="password" placeholder="">
             </div>
 
+            <div class="col-12">
+              <label for="password2" class="form-label"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Повторіть пароль</font></font><span class="text-muted"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">(обов’язково)</font></font></span></label>
+              <input type="text" class="form-control" name="password2" id="password2" placeholder="">
+            </div>
+
             <input type='submit' class="btn btn-success" value="Реєстрація">
           </div>
         </form>
 </div>
 </body>
 </html>
+
 {% endblock %}

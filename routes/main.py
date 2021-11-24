@@ -10,3 +10,8 @@ def main_page():
 @app.route('/error_add')
 def error_add():
     return render_template('error_add.html')
+
+
+@app.route('/ok_add')
+def ok_add():
+    return render_template('ok_add.html')
