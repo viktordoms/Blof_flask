@@ -5,27 +5,31 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="afa51837-67d1-4287-ba20-4c2b8fa1a8cd" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/templates/ok_add.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docker/mysql/#ib_16384_0.dblwr" beforeDir="false" afterPath="$PROJECT_DIR$/docker/mysql/#ib_16384_0.dblwr" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/mysql/#innodb_temp/temp_1.ibt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/mysql/#innodb_temp/temp_10.ibt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/mysql/#innodb_temp/temp_2.ibt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/mysql/#innodb_temp/temp_3.ibt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/mysql/#innodb_temp/temp_4.ibt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/mysql/#innodb_temp/temp_5.ibt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/mysql/#innodb_temp/temp_6.ibt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/mysql/#innodb_temp/temp_7.ibt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/mysql/#innodb_temp/temp_8.ibt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/mysql/#innodb_temp/temp_9.ibt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/docker/mysql/auto.cnf" beforeDir="false" afterPath="$PROJECT_DIR$/docker/mysql/auto.cnf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/mysql/binlog.000056" beforeDir="false" afterPath="$PROJECT_DIR$/docker/mysql/binlog.000056" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docker/mysql/binlog.index" beforeDir="false" afterPath="$PROJECT_DIR$/docker/mysql/binlog.index" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docker/mysql/blog_base/users.ibd" beforeDir="false" afterPath="$PROJECT_DIR$/docker/mysql/blog_base/users.ibd" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docker/mysql/ib_buffer_pool" beforeDir="false" afterPath="$PROJECT_DIR$/docker/mysql/ib_buffer_pool" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docker/mysql/ib_logfile0" beforeDir="false" afterPath="$PROJECT_DIR$/docker/mysql/ib_logfile0" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docker/mysql/ibdata1" beforeDir="false" afterPath="$PROJECT_DIR$/docker/mysql/ibdata1" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/mysql/ibtmp1" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/docker/mysql/mysql.ibd" beforeDir="false" afterPath="$PROJECT_DIR$/docker/mysql/mysql.ibd" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docker/mysql/undo_001" beforeDir="false" afterPath="$PROJECT_DIR$/docker/mysql/undo_001" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docker/mysql/undo_002" beforeDir="false" afterPath="$PROJECT_DIR$/docker/mysql/undo_002" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/authorization.py" beforeDir="false" afterPath="$PROJECT_DIR$/routes/authorization.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/routes/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/registration.py" beforeDir="false" afterPath="$PROJECT_DIR$/routes/registration.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/error_add.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/error_add.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/main/authorization.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/main/authorization.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/main/registration.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/main/registration.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,6 +59,7 @@
     <setting file="file://$PROJECT_DIR$/templates/main/main.html" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/templates/main/base.html" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/templates/error_add.html" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/templates/main/authorization.html" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/templates/main/registration.html" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/routes/registration.py" root0="FORCE_HIGHLIGHTING" />
   </component>
