@@ -1,5 +1,5 @@
 from app import app, db
-from flask import render_template, request, redirect, flash, url_for
+from flask import render_template, request, redirect, flash
 from models.models import *
 from werkzeug.security import generate_password_hash
 
@@ -10,7 +10,6 @@ def registration():
     first_name = request.form.get('first_name')
     last_name = request.form.get('last_name')
     email = request.form.get('email')
-    login = request.form.get('login')
     password = request.form.get('password')
     password2 = request.form.get('password2')
 
@@ -24,7 +23,6 @@ def registration():
                 first_name=first_name,
                 last_name=last_name,
                 email=email,
-                login=login,
                 password=has_password
             )
 

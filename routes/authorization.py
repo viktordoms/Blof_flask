@@ -10,7 +10,7 @@ from app import app
 
 @app.route('/users/exit', methods=["GET", "POST"])
 def authorization():
-    login = request.form.get("login")
+    login = request.form.get("email")
     password = request.form.get("password")
 
     if login and password:

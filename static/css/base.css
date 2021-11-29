@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@200;400;800&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.button_menu {
+  cursor: pointer;
+  text-decoration: none;
+  color: #000000;
+}
+
+.button_menu:hover{
+  color: #b50d1b
+}
+
+body{
+  background-color: #242121
+}
+
+#head {
+  /* форма блока */
+  width: 100%;
+  height: 60px;
+  background: #141414;
+  display: block;
+  padding: 10px;
+  margin-bottom: 30px;
+}
+
+#header {
+  float: left;
+  width: 70px;
+  height: 45px;
+  margin-left: 80px;
+  margin-right: 2px;
+  /* Стиль тексту */
+  font-family: 'Be Vietnam Pro', sans-serif;
+  font-size: 40px;
+  font-weight: 600;
+  color: #fff;
+}
+
+ #header1 {
+   /* Форма блока */
+  float: left;
+  width: 60px;
+  height: 45px;
+  background: #f90;
+  border-radius: 5px;
+  margin-left: 1px;
+  /* Текст */
+  font-family: 'Be Vietnam Pro', sans-serif;
+  font-weight: 600;
+  text-align: center;
+  font-size: 40px;
+}
+
+ #login{
+   float: right;
+   width: 70px;
+   height: 20px;
+   background: #f90;
+   border-radius: 3px;
+   margin-top: 15px;
+   margin-left: 10px;
+   /* Текст */
+   font-family: 'Be Vietnam Pro', sans-serif;
+   font-weight: 600;
+   text-align: center;
+   font-size: 15px;
+}
+
+#register{
+  float: right;
+  width: 120px;
+  height: 20px;
+  background: #f90;
+  border-radius: 3px;
+  margin-top: 15px;
+  /* Текст */
+  font-family: 'Be Vietnam Pro', sans-serif;
+  font-weight: 600;
+  text-align: center;
+  font-size: 15px;
+}
+/* #block_menu{ */
+  float: inherit;
+}

@@ -1,24 +1,37 @@
-{% extends 'main/base.html' %}
+<a class="block_menu">{% extends 'main/base.html' %}
 
 {% block title %}
 Реєстрація
 {% endblock %}
 
 {% block menu %}
-<form action="/users/new" method="post" class="form-contact">
-<p> Реєстрація </p>
-<p> Заповніть всі поля </p>
+</a>
+<head>
+  <!-- <link rel="stylesheet" type="text/css" href="{{ url_for( 'static', filename='/css/register.css', v=1)}}"> -->
+  <link rel="stylesheet" href="{{ url_for( 'static', filename='/css/register.css', v=1)}}">
+</head>
+<body>
+  <form action="/users/new" method="post" class="form-contact">
 
-<p><label>Імя: </label> <input type="text" name="first_name" value="" requied />
-<p><label>Прізвище: </label> <input type="text" name="last_name" value="" requied />
-<p><label>Email: </label> <input type="text" name="email" value="" requied />
-<p><label>Логін: </label> <input type="text" name="login" value="" requied />
-<p><label>Пароль: </label> <input type="password" name="password" value="" requied />
-<p><label>Повтор пароля: </label> <input type="password" name="password2" value="" requied />
-<p><input type="submit" value="Реєстрація" />
-</form>
-{{ super() }}
-{% for cat, msg in get_flashed_messages(True) %}
-<div class="flash {{cat}}">{{msg}}</div>
-{% endfor %}
+    <p id="text_login">Реєстрація користувача</p>
+    <div id="flash_massage">
+      flash-text
+    </div>
+    <div>
+      <p><input type="text" class="form-login" id="first_name" name="first_name" placeholder="Введіть ім'я"></p>
+      <p><input type="text" class="form-login" id="last_name" name="last_name" placeholder="Введіть прізвище"></p>
+      <p><input type="email" class="form-login" id="email" name="email" placeholder=" Введіть Email(email@example.com)"></p>
+      <p><input type="password" class="form-login" id="password" name="password" placeholder=" Введіть пароль(більше 8-ми символів)"></p>
+      <p><input type="password" class="form-login" id="password2" name="password2" placeholder=" Повторіть пароль"></p>
+      <input type='submit' class="button_add" value="Реєстрація">
+      <a class="button_exit" href="/users/exit" type='submit' >Авторизація</a>
+    </div>
+  </form>
+  <div id="icon_login">G</div>
+  <div class="information">
+    <p> На цьому сайті Ви можете зробити наступне:</p>
+  </div>
+
+</body>
+
 {% endblock %}

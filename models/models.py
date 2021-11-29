@@ -8,7 +8,6 @@ class Users(db.Model, UserMixin):
     first_name = db.Column(db.String(50), nullable=False)
     last_name = db.Column(db.String(50), nullable=False)
     email = db.Column(db.String(50), nullable=False, unique=True)
-    login = db.Column(db.String(50), nullable=False, unique=True)
     password = db.Column(db.String(500), nullable=False)
 
     def __repr__(self):
@@ -21,7 +20,6 @@ class Users(db.Model, UserMixin):
             "first_name": self.first_name,
             "last_name": self.last_name,
             "email": self.email,
-            "login": self.login,
             "password": self.password
         }
 
