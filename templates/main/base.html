@@ -6,18 +6,23 @@
   <title>{% block title %}{% endblock %}</title>
 </head>
 <body>
-  <div id="head">
-    <div id="header">Blo</div>
-    <div id="header1">
-      <a class="button_menu" href="/users">G</a>
+  <section id="head">
+    <div class="wrapper">
+      <div id="header">
+         Blo
+      </div>
+      <div id="header1">
+        <a class="button_menu" href="/users">G</a>
+      </div>
+      <div id="login">
+        <a class="button_menu" href="/users/exit">Вхід</a>
+      </div>
+      <div id="register">
+        <a class="button_menu" href="/users/new" type='submit' >Реєстрація</a>
+      </div>
     </div>
-    <div id="login">
-      <a class="button_menu" href="/users/exit">Вхід</a>
-    </div>
-    <div id="register">
-      <a class="button_menu" href="/users/new" type='submit' >Реєстрація</a>
-    </div>
-  </div>
-  <div id="block_menu">{% block menu %}{% endblock %}</div>
+    <div id="block_menu">{% block menu %}{% endblock %}</div>
+   </div>
+ </section>
 </body>
 </html>

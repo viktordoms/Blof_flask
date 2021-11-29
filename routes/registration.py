@@ -1,5 +1,5 @@
 from app import app, db
-from flask import render_template, request, redirect, flash
+from flask import render_template, request, redirect, flash, url_for
 from models.models import *
 from werkzeug.security import generate_password_hash
 
@@ -16,6 +16,7 @@ def registration():
     if request.method == 'POST':
         if password != password2:
             flash("Паролі не співпадають")
+            return redirect(url_for('registration'))
         else:
             has_password = generate_password_hash(password)
             user = Users(
@@ -31,7 +32,8 @@ def registration():
                 db.session.commit()
                 return redirect("/users/exit")
             except:
-                 return redirect('/error_add')
+                 flash("Користувач з таким email вже існує")
+                 return redirect(url_for('registration'))
 
     else:
         return render_template('main/registration.html')
