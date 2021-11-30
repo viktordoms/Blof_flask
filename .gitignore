@@ -1,3 +1,3 @@
-/docker/mysql
-/tampates/main/css
-/tampates/main/a.txt
+/docker/mysql/*
+/templates/css/*
+
