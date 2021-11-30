@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Створення поста
+{% endblock %}
+
+{% block menu %}
+<body>
+  <form action="/create-post" method="post" class="form-contact">
+    <p id="text_login">Добавляння поста</p>
+    <div class="flash_massage">
+        {{ super() }}
+      {% for cat, msg in get_flashed_messages(True) %}
+      <div class="flash {{cat}}">{{msg}}</div>
+      {% endfor %}
+    </div>
+    <div>
+      <p><input type="text" class="form-login" id="categor" name="categor" required maxlength="20" placeholder="Введіть категорію(максимум 20 символів)"></p>
+      <textarea type="text" class="form-login" id="topic" name="topic" required maxlength="50" placeholder="Введіть тему(максимум 50 символів)"></textarea><br>
+      <textarea type="text" class="form-login" id="text" name="text" required placeholder=" Введіть текст поста"></textarea><br>
+
+      <input type='submit' class="button_add" value="Запостити">
+    </div>
+  </form>
+</body>
+
+{% endblock %}

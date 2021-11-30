@@ -4,31 +4,27 @@
   margin: 0;
   padding: 0;
 }
-.error404{
-  margin-top: 150px;
-}
 
-#block_menu{
-  margin-bottom: 60px;
-}
+#block_menu{}
+
 /* Сірий блок */
-.form-contact{
+.form-exit{
   background: #525252;
   border-radius: 10px;
   width: 400px;
-  height: 450px;
+  height: 350px;
   display: block;
-  margin-left: 730px;
+  margin-left: 480;
   margin-top: 120px;
   padding: 20px;
 }
 
 .flash_massage{
   width: 100%;
-  height: 25px;
+  height: 35px;
   border: 1px solid #555;;
   padding: 3px auto;
-  margin: 4px auto;
+  margin: 10px auto;
   display: block;
   color: #000000;
   font-family: 'Be Vietnam Pro', sans-serif;
@@ -53,7 +49,7 @@
   display: block;
   margin-top: 10px;
   margin-left: auto;
-  margin-bottom: 10px
+  margin-bottom: 20px
 }
 
 input {
@@ -65,6 +61,7 @@ input {
   border: 1px solid #555;;
   padding: 12px 15px;
   margin: 5px auto;
+  margin-bottom: 30px;
     /* Текст */
   font-family: 'Be Vietnam Pro', sans-serif;
   color: #ccc;
@@ -120,7 +117,7 @@ input {
   color: #bf0a0a
 }
 
-/* #icon_login { */
+/* #icon_login {
   float: left;
   /* Форма блока */
   width: 160px;
@@ -133,4 +130,4 @@ input {
   text-align: center;
   font-size: 90px;
   margin-left: 10px;
-}
+} */

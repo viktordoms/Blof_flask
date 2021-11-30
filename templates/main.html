@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Реєстрація
+{% endblock %}
+
+{% block menu %}
+<body>
+  <form action="/" method="get" class="form-contact">
+    <div class="flash_massage">
+      {{ super() }}
+      {% for cat, msg in get_flashed_messages(True) %}
+      <div class="flash {{cat}}">{{msg}}</div>
+      {% endfor %}
+    </div>
+    <div class="">
+      <h1>POSTS</h1>
+      {% for el in post %}
+      <div class="">
+        <h2>{{ el.topic}}</h2>
+        <p>{{ el. categor}}</p>
+        <p><b>Дата:{{el.date_add.date()}}</b></p>
+        <button type="button">Детальніше</button>
+      </div>
+      {% endfor %}
+
+    </div>
+  </form>
+</body>
+{% endblock %}

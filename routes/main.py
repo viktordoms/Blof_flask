@@ -1,17 +1,15 @@
-from app import app
+from app import app, db
 from flask import render_template
+from models.models import Posts
 
 
 @app.route('/', methods=["GET"])
 def main_page():
-    return render_template('main/main.html')
+    post = Posts.query.all()
+    return render_template('main.html', post=post)
 
 
-@app.route('/error_add')
-def error_add():
-    return render_template('error_add.html')
+@app.errorhandler(404)
+def page_not_found(error):
+    return render_template('page404.html'), 404
 
-
-@app.route('/ok_add')
-def ok_add():
-    return render_template('ok_add.html')
