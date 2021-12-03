@@ -8,8 +8,6 @@ COPY ./requirements.txt /application/requirements.txt
 
 RUN  pip install -r requirements.txt
 
-#COPY ./wait-for-it.sh /usr/bin/wait-for-it.sh
+COPY ./wait-for-it.sh /application/wait-for-it.sh
 
-CMD flask run --host=0.0.0.0 --port=8080
-
-#CMD ["./wait-for-it.sh", "db:3306", "--", "flask","app:app"]
+CMD ./wait-for-it.sh db:3306 --  python3 app.py

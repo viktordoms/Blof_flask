@@ -6,8 +6,7 @@
 
 {% block menu %}
 <head>
-  <link rel="stylesheet" type="text/css" href="{{ url_for( 'static', filename='/css/register.css', v=1)}}">
-  <!-- <link rel="stylesheet" href="css/exit.css"> -->
+  <link rel="stylesheet" type="text/css" href="{{ url_for( 'static', filename='/css/exit.css', v=1)}}">
 </head>
 <body>
   <form action="/users/exit" method="post" class="form-exit">
@@ -21,6 +20,7 @@
     <div>
       <p><input type="email" class="form-login" id="email" name="email" required placeholder=" Введіть ваш Email"></p>
       <p><input type="password" class="form-login" id="password" name="password" required placeholder=" Введіть ваш пароль(більше 8-ми символів)"></p>
+      <p class="remainme"><input type="checkbox" name="remainme" value="">Запам'ятати мене</p>
       <input type='submit' class="button_add" value="Вхід">
       <a class="button_exit" href="/users/new" type='submit'>Реєстрація</a>
     </div>

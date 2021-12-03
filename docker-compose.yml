@@ -34,6 +34,8 @@ services:
       - "5566:3306"
     networks:
       - app
+    security_opt:
+        - seccomp:unconfined
 
 networks:
   app:
