@@ -1,13 +1,14 @@
 from flask import request, redirect, render_template, url_for, flash
-from flask_login import login_required
-from models.models import Posts
+from flask_login import login_required, current_user
+from models.models import *
 from app import app, db
 
 
-@app.route('/create-post', methods=["GET", "POST"])
+@app.route('/users/create-post', methods=["GET", "POST"])
 @login_required
 def create_post():
     post_id = request.form.get('post_id')
+    user_id = request.form.get('user_id')
     categor = request.form.get('categor')
     topic = request.form.get('topic')
     text = request.form.get('text')
@@ -16,6 +17,9 @@ def create_post():
     if request.method == 'POST':
         if len(categor) <= 5:
             flash("Категорія має містити мінімум 6 символів", category='error')
+            return redirect(url_for('create_post'))
+        if len(user_id) < 0:
+            flash("Введіть ваш Id", category='error')
             return redirect(url_for('create_post'))
         if len(topic) <= 6:
             flash("Тема має містити мінімум 7 символів", category='error')
@@ -26,6 +30,7 @@ def create_post():
         else:
             post = Posts(
                 post_id=post_id,
+                user_id=user_id,
                 categor=categor,
                 topic=topic,
                 text=text,
@@ -44,3 +49,36 @@ def create_post():
         return render_template('create-post.html')
 
 
+@app.route("/users/my-post", methods=["GET"])
+@login_required
+def my_post():
+    user_id = current_user.get_id()
+    post = Posts.query.filter(Posts.user_id == user_id)
+    all_post = post.all()
+    return render_template("my-post.html", post=all_post)
+
+
+@app.route("/users/my-post/post:<post_id>", methods=["GET", "POST"])
+@login_required
+def post_detail(post_id):
+    detail = Posts.query.get(post_id)
+    return render_template("post_detail.html", detail=detail)
+
+
+@app.route("/users/my-post/post:<post_id>/update", methods=["GET", "POST"])
+@login_required
+def update_post(post_id):
+    detail = Posts.query.get(post_id)
+    if request.method == 'POST':
+        detail.topic = request.form['topic']
+        detail.text = request.form['text']
+        try:
+            db.session.commit()
+            flash("Пост успішно редаговано")
+            return redirect(url_for("my_post"))
+        except:
+            flash("При редагуванні сталась помилка")
+            return redirect(url_for("update_post"))
+
+    else:
+        return render_template('update_post.html', detail=detail)

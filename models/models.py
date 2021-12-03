@@ -1,6 +1,9 @@
+from sqlalchemy.orm import relationship
+
 from app import db
 from flask_login import UserMixin
 from datetime import datetime
+from sqlalchemy import ForeignKey
 
 
 class Users(db.Model, UserMixin):
@@ -10,6 +13,8 @@ class Users(db.Model, UserMixin):
     last_name = db.Column(db.String(50), nullable=False)
     email = db.Column(db.String(50), nullable=False, unique=True)
     password = db.Column(db.String(500), nullable=False)
+
+    posts = db.relationship("Posts", back_populates="user")
 
     def __repr__(self):
         return 'Users %r>' % self.id
@@ -25,7 +30,6 @@ class Users(db.Model, UserMixin):
         }
 
 
-
 class Posts(db.Model):
     __tablename__ = 'posts'
     post_id = db.Column(db.Integer, nullable=False, primary_key=True, autoincrement=True)
@@ -33,6 +37,9 @@ class Posts(db.Model):
     topic = db.Column(db.String(250), nullable=False)
     text = db.Column(db.Text, nullable=False)
     date_add = db.Column(db.DateTime, default=datetime.utcnow)
+
+    user_id = db.Column(db.Integer, ForeignKey("users.id"), nullable=False)
+    user = db.relationship("Users", back_populates="posts")
 
     def __repr__(self):
         return 'Posts %r>' % self.post_id
@@ -44,5 +51,6 @@ class Posts(db.Model):
             "categor": self.categor,
             "topic": self.topic,
             "text": self.text,
-            "date_add": self.date_add
+            "date_add": self.date_add,
+            "user_id": self.user_id
         }
