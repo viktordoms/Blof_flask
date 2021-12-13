@@ -6,3 +6,4 @@ sqlalchemy
 cryptography
 Werkzeug
 flask_login
+python-dotenv

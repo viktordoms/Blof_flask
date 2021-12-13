@@ -21,10 +21,10 @@ def login():
          if user and check_password_hash(user.password, password):
              rm = True if request.form.get("remainme") else False
              login_user(user, remember=rm)
-             flash('Авторизація успішна')
+             flash('Авторизація успішна', category='success')
              return redirect(url_for('users'))
          else:
-             flash("Помилка.Перевірте логін або пароль")
+             flash("Помилка.Перевірте логін або пароль", category='error')
              return redirect(url_for("login"))
      else:
          return render_template('login.html')
@@ -33,7 +33,7 @@ def login():
 @app.route("/logout", methods=["GET", "POST"])
 @login_required
 def logout():
-    flash("Ви вийшли з акаунта", "success")
+    flash("Ви вийшли з акаунта", category='success')
     logout_user()
     return redirect(url_for('main_page'))
 
@@ -41,7 +41,7 @@ def logout():
 @app.after_request
 def redirect_to_singin(response):
     if response.status_code == 401:
-        flash("Для виконання даної дії потріно авторизуватись", "success")
+        flash("Для виконання даної дії потріно авторизуватись", category='error')
         return redirect(url_for('login') + "?next" + request.url)
     return response
 
@@ -51,10 +51,10 @@ def load_user(id):
     return Users.query.get(id)
 
 
-@app.route("/users")
+@app.route("/users/")
 @login_required
 def users():
     user_id = current_user.get_id()
-    return render_template("user_page.html", user_id=user_id)
+    return render_template("user_page.html", user_id=user_id, name=current_user)
 
 

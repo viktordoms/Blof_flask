@@ -18,6 +18,7 @@ db = SQLAlchemy(app)
 
 db.init_app(app)
 
+
 with app.app_context():
      from routes.main import *
      from routes.registration import *

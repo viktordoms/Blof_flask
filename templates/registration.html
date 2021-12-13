@@ -6,12 +6,12 @@
 
 {% block menu %}
 <head>
-  <link rel="stylesheet" type="text/css" href="{{ url_for( 'static', filename='/css/register.css', v=1)}}">
+  <link rel="stylesheet" type="text/css" href="{{ url_for( 'static', filename='/css/base.css', v=1)}}">
 </head>
 <body>
   <form action="/users/new" method="post" class="form-contact">
     <p id="text_login">Реєстрація користувача</p>
-    <div class="flash_massage">
+    <div id="register_flash" class="flash_massage">
       {{ super() }}
       {% for cat, msg in get_flashed_messages(True) %}
       <div class="flash {{cat}}">{{msg}}</div>
@@ -26,10 +26,6 @@
       <input type='submit' class="button_add" value="Реєстрація">
       <a class="button_exit" href="/users/exit" type='submit' >Авторизація</a>
     </div>
-<!--     <div id="icon_login">G</div> -->
-<!--     <div class="information"> -->
-<!--       <p> На цьому сайті Ви можете зробити наступне:</p> -->
-<!--     </div> -->
   </form>
 </body>
 

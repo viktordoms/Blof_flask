@@ -14,7 +14,8 @@ class Users(db.Model, UserMixin):
     email = db.Column(db.String(50), nullable=False, unique=True)
     password = db.Column(db.String(500), nullable=False)
 
-    posts = db.relationship("Posts", back_populates="user")
+    posts = db.relationship("Posts", back_populates="users")
+    liked = db.relationship('PostLike', foreign_keys='PostLike.user_id', backref='users', lazy='dynamic')
 
     def __repr__(self):
         return 'Users %r>' % self.id
@@ -29,6 +30,20 @@ class Users(db.Model, UserMixin):
             "password": self.password
         }
 
+    def like_post(self, post):
+        if not self.has_liked_post(post):
+            like = PostLike(user_id=self.id, post_id=post.post_id)
+            db.session.add(like)
+
+    def unlike_post(self, post):
+        if self.has_liked_post(post):
+            PostLike.query.filter_by(user_id=self.id, post_id=post.post_id).delete()
+
+    def has_liked_post(self, post):
+        return PostLike.query.filter(
+            PostLike.user_id == self.id,
+            PostLike.post_id == post.post_id).count() > 0
+
 
 class Posts(db.Model):
     __tablename__ = 'posts'
@@ -38,8 +53,9 @@ class Posts(db.Model):
     text = db.Column(db.Text, nullable=False)
     date_add = db.Column(db.DateTime, default=datetime.utcnow)
 
+    likes = db.relationship('PostLike', backref='post', lazy='dynamic')
     user_id = db.Column(db.Integer, ForeignKey("users.id"), nullable=False)
-    user = db.relationship("Users", back_populates="posts")
+    users = db.relationship("Users", back_populates="posts")
 
     def __repr__(self):
         return 'Posts %r>' % self.post_id
@@ -53,4 +69,22 @@ class Posts(db.Model):
             "text": self.text,
             "date_add": self.date_add,
             "user_id": self.user_id
+        }
+
+
+class PostLike(db.Model):
+    __tablename__ = 'post_like'
+    like_id = db.Column(db.Integer, primary_key=True)
+    user_id = db.Column(db.Integer, db.ForeignKey('users.id'))
+    post_id = db.Column(db.Integer, db.ForeignKey('posts.post_id'))
+
+    def __repr__(self):
+        return 'PostLike %r>' % self.like_id
+
+    @property
+    def serialize(self):
+        return {
+            "like_id": self.id,
+            "user_id": self.user_id,
+            "post_id": self.post_id
         }
